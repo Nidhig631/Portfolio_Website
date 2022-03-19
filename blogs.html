@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+  <title>Blogs</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript>
+    <link rel="stylesheet" href="assets/css/noscript.css" />
+  </noscript>
+  <link rel="icon" type="image/png" href="./images/download.png" />
+</head>
+
+<body class="is-preload">
+  <!-- Wrapper -->
+  <div id="wrapper" class="fade-in">
+    <!-- Intro -->
+    <div id="intro">
+      <h1>Nidhi Gupta</h1>
+      <p>
+        Database developer skilled in databases(SQL and NO-SQL) Postgresql, Sql Sever, Mysql, Cassandra, Cosmosdb,
+        Mongodb, ELK(Elasticsearch, Logstash and Kibana), Timescale(timeseries), PLSQL, Database migration, Query
+        optimization, Bulk data insertion and other database activities.Programming language like Python.Visualization
+        tools PowerBI, Tableau, Grafana and Kibana.Message Broker like Rabbitmq and Redis.<b>Technical content writer at
+          <a href="https://nidhig631.medium.com">MEDIUM</a></b>
+      </p>
+      <ul class="actions">
+        <li>
+          <a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a>
+        </li>
+      </ul>
+    </div>
+    <!-- Header -->
+    <header id="header">
+      <a href="index.html" class="logo">Database developer</a>
+    </header>
+
+    <!-- Nav -->
+    <nav id="nav">
+      <ul class="links">
+        <li><a href="index.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li class="active"><a href="blogs.html">Blogs</a></li>
+        <li><a href="resume.html">Resume</a></li>
+      </ul>
+      <ul class="icons">
+        <li>
+          <a href="https://www.linkedin.com/in/nidhig631" class="icon brands alt fa-linkedin"><span
+              class="label">Linkedin</span></a>
+        </li>
+      </ul>
+      <ul class="icons">
+        <li>
+          <a href="https://twitter.com/NidhiGu74193759" class="icon brands alt fa-twitter"><span
+              class="label">Twitter</span></a>
+        </li>
+      </ul>
+      <ul class="icons">
+        <li>
+          <a href="https://github.com/Nidhig631" class="icon brands alt fa-github"><span class="label">GitHub</span></a>
+        </li>
+      </ul>
+    </nav>
+    <!-- Main -->
+    <div id="main">
+      <!-- Post -->
+      <section class="post medium-post">
+        <!-- <h2 style="text-align: center;">My Contributions</h2> -->
+      </section>
+      <h4>
+        <center>Writer at</center>
+        <center>
+          <a href="https://code.likeagirl.io/"><img src="images/writer-icon.JPG" width="150px" height="100px"
+              alt="" /></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="https://medium.com/analytics-vidhya"><img src="images/icon.JPG" width="150px" height="100px"
+              alt="" /></a>
+        </center>
+      </h4>
+      <h4>
+        <center>For more blog posts click here
+          <ul class="icons">
+            <li> <a href="https://nidhig631.medium.com" target="_blank"
+                class="icon brands alt fa-medium">medium-post</a>
+            </li>
+          </ul>
+        </center>
+      </h4>
+
+
+
+
+
+      <!-- Copyright -->
+      <div id="copyright">
+        <ul>
+          <li>&copy;2021 Nidhi Gupta</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+      $.ajax({
+        type: "GET",
+        url: "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@nidhig631",
+        dataType: 'JSONP',
+        success: function (data) {
+          console.log(data);
+          data.items.map((item) => {
+            const day = new Date(`${item.pubDate}`).getDate();
+            const month = new Date(`${item.pubDate}`).toLocaleString('default', { month: 'long' });
+            const year = new Date(`${item.pubDate}`).getFullYear();
+            const ele = $(`<div class="post-card">
+            <img src=${item.thumbnail} width="95px" alt="thumnail">
+            <div class="desc">
+                <h3 class="caption"><a href=${item.link} target="_blank">${item.title}</a></h3>
+                <span class="date">${month} ${day}, ${year}</span>    
+            </div>
+          </div>`);
+            $('.medium-post').append(ele);
+          });
+
+        }
+      });
+    </script>
+
+</body>
+
+</html>
